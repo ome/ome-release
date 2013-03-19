@@ -1,4 +1,4 @@
-#!/usr/bin/env venv/bin/python
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
 
@@ -21,7 +21,7 @@ from doc_generator import *
 fingerprint_url = "http://hudson.openmicroscopy.org.uk/fingerprint"
 MD5s = """
 MD5(4.4.5/OMERO-4.4.5.pdf)= d92d4bd40e2defb328756780c77a633e
-MD5(4.4.6/OMERO-4.4.6.pdf)= f18208f6c0a53083392dbeb590310730
+MD5(4.4.6/OMERO-4.4.6.pdf)= 03aace065d939bb7a47a13b47cf4cc70
 """
 MD5s = [x.split(" ")[1] for x in MD5s.split("\n") if x.strip()]
 
@@ -58,8 +58,15 @@ else:
 if "SNAPSHOT_PATH" in os.environ:
     SNAPSHOT_PATH =  os.environ.get('SNAPSHOT_PATH')
 else:
-    SNAPSHOT_PATH = "/var/www/cvs.openmicroscopy.org.uk/snapshots/omero/"
-SNAPSHOT_URL = "http://cvs.openmicroscopy.org.uk/snapshots/omero/"
+    SNAPSHOT_PATH = "/var/www/cvs.openmicroscopy.org.uk/snapshots"
+
+if "SNAPSHOT_URL" in os.environ:
+    SNAPSHOT_URL =  os.environ.get('SNAPSHOT_URL')
+else:
+    SNAPSHOT_URL = "http://cvs.openmicroscopy.org.uk/snapshots"
+
+OMERO_SNAPSHOT_PATH = SNAPSHOT_PATH + "/omero/"
+OMERO_SNAPSHOT_URL = SNAPSHOT_URL + "/omero/"
 
 
 for x, y in (
@@ -74,7 +81,7 @@ for x, y in (
     ("VM", "virtualbox/omero-vm-@VERSION@.ova"),
     ("DOC", "@VERSION@/OMERO-@VERSION@.pdf")):
 
-    find_pkg(repl, fingerprint_url, SNAPSHOT_PATH, SNAPSHOT_URL, x, y, MD5s)
+    find_pkg(repl, fingerprint_url, OMERO_SNAPSHOT_PATH, OMERO_SNAPSHOT_URL, x, y, MD5s)
 
 
 for line in fileinput.input(["tmpl.txt"]):

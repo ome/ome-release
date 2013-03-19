@@ -112,7 +112,7 @@ def find_pkg(repl, fingerprint_url, snapshot_path, snapshot_url, name, path, ign
     path = repl_all(repl, path)
     rv = glob.glob(snapshot_path + path)
     if len(rv) != 1:
-        raise Exception("Results!=1 for %s (%s): %s" % (name, path, rv))
+        raise Exception("Results!=1 for %s (%s): %s" % (name, snapshot_path + path, rv))
     path = rv[0]
     hash = hashfile(path)
     if "SKIP_MD5" not in os.environ:
