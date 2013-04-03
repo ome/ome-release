@@ -28,17 +28,22 @@ MD5s = [x.split(" ")[1] for x in MD5s.split("\n") if x.strip()]
 
 
 def usage():
-    print "gen.py version build"
+    print "gen.py version build [build_ice34]"
     sys.exit(1)
 
 try:
     version = sys.argv[1]
     build = sys.argv[2]
+    if len(sys.argv) < 4:
+        build_ice34 = build
+    else:
+        build_ice34 = sys.argv[3]
 except:
     usage()
 
 repl = {"@VERSION@": version,
         "@BUILD@": build,
+        "@BUILD_ICE34@": build_ice34,
         "@MONTHYEAR@": datetime.datetime.now().strftime("%b %Y")}
 
 
@@ -76,7 +81,7 @@ for x, y in (
     ("IJ_CLIENTS", "@VERSION@/OMERO.insight-ij-@VERSION@-ice33-@BUILD@.zip"),
     ("MATLAB_CLIENTS", "@VERSION@/OMERO.matlab-@VERSION@-ice33-@BUILD@.zip"),
     ("SERVER33", "@VERSION@/OMERO.server-@VERSION@-ice33-@BUILD@.zip"),
-    ("SERVER34", "@VERSION@/OMERO.server-@VERSION@-ice34-@BUILD@.zip"),
+    ("SERVER34", "@VERSION@/OMERO.server-@VERSION@-ice34-@BUILD_ICE34@.zip"),
     ("DOCS", "@VERSION@/OMERO.docs-@VERSION@-ice33-@BUILD@.zip"),
     ("VM", "virtualbox/omero-vm-@VERSION@.ova"),
     ("DOC", "@VERSION@/OMERO-@VERSION@.pdf")):
