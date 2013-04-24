@@ -17,7 +17,7 @@ major release of OMERO. Refer to the following sections for more information
 about each release.
 
  * After downloading the relevant files, you may want to take a look at our OMERO @VERSION@ [online documentation](@DOC_URL@) page or
-[PDF documentation](@DOC@).
+[PDF documentation](@PDF_URL@).
 
 ## OMERO client @VERSION@ downloads ##
 
