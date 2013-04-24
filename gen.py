@@ -69,6 +69,10 @@ else:
 OMERO_SNAPSHOT_PATH = SNAPSHOT_PATH + "/omero/"
 OMERO_SNAPSHOT_URL = SNAPSHOT_URL + "/omero/"
 
+if "ANNOUCEMENT_URL" in os.environ:
+    repl["@ANNOUCEMENT_URL@"] = os.environ.get('ANNOUCEMENT_URL')
+else:
+    repl["@ANNOUCEMENT_URL@"] = "https://www.openmicroscopy.org/community/viewforum.php?f=11"
 
 for x, y in (
     ("LINUX_CLIENTS", "@VERSION@/OMERO.clients-@VERSION@-ice33-@BUILD@.linux.zip"),
