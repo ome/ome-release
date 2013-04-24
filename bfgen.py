@@ -55,7 +55,7 @@ try:
 except Exception:
     token = None
 
-gh = github.Github(token)
+gh = github.Github(token, user_agent="PyGithub")
 org = gh.get_organization("openmicroscopy")
 repo = org.get_repo("openmicroscopy")
 for tag in repo.get_tags():

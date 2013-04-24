@@ -47,7 +47,7 @@ repl = {"@VERSION@": version,
         "@MONTHYEAR@": datetime.datetime.now().strftime("%b %Y")}
 
 
-gh = github.Github()
+gh = github.Github(user_agent="PyGithub")
 org = gh.get_organization("openmicroscopy")
 repo = org.get_repo("openmicroscopy")
 for tag in repo.get_tags():
