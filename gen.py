@@ -65,6 +65,7 @@ if "SNAPSHOT_URL" in os.environ:
     SNAPSHOT_URL =  os.environ.get('SNAPSHOT_URL')
 else:
     SNAPSHOT_URL = "http://cvs.openmicroscopy.org.uk/snapshots"
+repl["@SNAPSHOT_URL@"] = SNAPSHOT_URL
 
 OMERO_SNAPSHOT_PATH = SNAPSHOT_PATH + "/omero/"
 OMERO_SNAPSHOT_URL = SNAPSHOT_URL + "/omero/"
