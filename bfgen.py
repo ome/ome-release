@@ -60,7 +60,7 @@ else:
 
 BF_SNAPSHOT_PATH = SNAPSHOT_PATH + "/bioformats/"
 BF_SNAPSHOT_URL = SNAPSHOT_URL + "/bioformats/"
-repl["@SNAPSHOT_URL@"] = SNAPSHOT_URL
+repl["@BF_SNAPSHOT_URL@"] = BF_SNAPSHOT_URL
 
 
 for x in ["bio-formats.jar", "scifio.jar", "bftools.zip",
