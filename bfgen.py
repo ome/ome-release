@@ -64,9 +64,11 @@ repl["@BF_SNAPSHOT_URL@"] = BF_SNAPSHOT_URL
 
 
 for x in ["bio-formats.jar", "scifio.jar", "bftools.zip",
-         "ome_tools.jar", "ome-io.jar", "ome-xml.jar", "ome_plugins.jar", "ome-editor.jar",
+         "ome_tools.jar", "ome-io.jar", "ome-xml.jar", "ome_plugins.jar",
          "poi-loci.jar", "jai_imageio.jar", "lwf-stubs.jar", "mdbtools-java.jar", "metakit.jar",
-         "loci-common.jar", "loci_tools.jar", "loci_plugins.jar", "loci-testing-framework.jar"]:
+         "loci-common.jar", "loci_tools.jar", "loci_plugins.jar",
+         "loci-testing-framework.jar", "loci-legacy.jar", "scifio-devel.jar",
+         "scifio-test.jar", "specification.jar", "turbojpeg.jar"]:
 
     find_pkg(repl, fingerprint_url, BF_SNAPSHOT_PATH, BF_SNAPSHOT_URL, \
             x, "@VERSION@/%s" % x, MD5s)

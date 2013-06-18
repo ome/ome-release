@@ -60,6 +60,30 @@ Developers can access builds of individual JAR libraries below.
 <td><a href="@DAILY_ome-xml.jar@">ome-xml.jar</a></td>
 </tr>
 <tr>
+<td>LOCI Legacy</td>
+<td><a href="@loci-legacy.jar@">loci-legacy.jar</a></td>
+<td><a href="@TRUNK_loci-legacy.jar@">loci-legacy.jar</a></td>
+<td><a href="@DAILY_loci-legacy.jar@">loci-legacy.jar</a></td>
+</tr>
+<tr>
+<td>SCIFIO Development library</td>
+<td><a href="@scifio-devel.jar@">scifio-devel.jar</a></td>
+<td><a href="@TRUNK_scifio-devel.jar@">scifio-devel.jar</a></td>
+<td><a href="@DAILY_scifio-devel.jar@">scifio-devel.jar</a></td>
+</tr>
+<tr>
+<td>SCIFIO Test library</td>
+<td><a href="@scifio-test.jar@">scifio-test.jar</a></td>
+<td><a href="@TRUNK_scifio-test.jar@">scifio-test.jar</a></td>
+<td><a href="@DAILY_scifio-test.jar@">scifio-test.jar</a></td>
+</tr>
+<tr>
+<td>OME Model Specification</td>
+<td><a href="@specification.jar@">specification.jar</a></td>
+<td><a href="@TRUNK_specification.jar@">specification.jar</a></td>
+<td><a href="@DAILY_specification.jar@">specification.jar</a></td>
+</tr>
+<tr>
 <td>LOCI Plugins for ImageJ</td>
 <td><a href="@loci_plugins.jar@">loci_plugins.jar</a></td>
 <td><a href="@TRUNK_loci_plugins.jar@">loci_plugins.jar</a></td>
@@ -117,6 +141,12 @@ Developers can access builds of individual JAR libraries below.
 <td><a href="@DAILY_poi-loci.jar@">poi-loci.jar</a></td>
 </tr>
 <tr>
+<td>TurboJPEG</td>
+<td><a href="@turbojpeg.jar@">turbojpeg.jar</a></td>
+<td><a href="@TRUNK_turbojpeg.jar@">turbojpeg.jar</a></td>
+<td><a href="@DAILY_turbojpeg.jar@">turbojpeg.jar</a></td>
+</tr>
+<tr>
 <th align="center" colspan="4">Stubs</th>
 </tr>
 <tr>
@@ -124,15 +154,6 @@ Developers can access builds of individual JAR libraries below.
 <td><a href="@lwf-stubs.jar@">lwf-stubs.jar</a></td>
 <td><a href="@TRUNK_lwf-stubs.jar@">lwf-stubs.jar</a></td>
 <td><a href="@DAILY_lwf-stubs.jar@">lwf-stubs.jar</a></td>
-</tr>
-<tr>
-<th align="center" colspan="4">Legacy</th>
-</tr>
-<tr>
-<td>OME Metadata Editor</td>
-<td><a href="@ome-editor.jar@">ome-editor.jar</a></td>
-<td>--</td>
-<td>--</td>
 </tr>
 </table>
 </div>
