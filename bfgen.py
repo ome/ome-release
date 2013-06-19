@@ -24,6 +24,11 @@ repl = {"@VERSION@": version,
 
 MD5s = []
 
+# Read major version from input version
+import re
+split_version =  re.split("^([0-9]+)\.([0-9]+)\.([0-9]+)(.*?)$", version)
+major_version = int(split_version[1])
+
 # Creating Github instance
 try:
     p = subprocess.Popen("git","config","--get","github.token", stdout = subprocess.PIPE)
@@ -35,17 +40,15 @@ except Exception:
     token = None
 
 gh = github.Github(token, user_agent="PyGithub")
-org = gh.get_organization("openmicroscopy")
-repo = org.get_repo("openmicroscopy")
+repo = gh.get_organization("openmicroscopy").get_repo("bioformats")
 for tag in repo.get_tags():
-    if tag.name == ("v.%s" % version):
+    if tag.name == ("v%s" % version):
         break
 repl["@SHA1_FULL@"] = tag.commit.sha
 repl["@SHA1_SHORT@"] = tag.commit.sha[0:10]
-if "STAGING" in os.environ:
-    repl["@DOC_URL@"] = "https://www.openmicroscopy.org/site/support/bio-formats-staging"
-else:
-    repl["@DOC_URL@"] = "https://www.openmicroscopy.org/site/support/bio-formats"
+repl["@DOC_URL@"] = "https://www.openmicroscopy.org/site/support/bio-formats%s" % major_version
+if "STAGING" in os.environ and os.environ.get("STAGING"):
+    repl["@DOC_URL@"] += "-staging"
 repl["@PDF_URL@"] = repl["@DOC_URL@"] + "/Bio-Formats-%s.pdf" % version
 
 if "SNAPSHOT_PATH" in os.environ:
