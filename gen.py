@@ -77,6 +77,11 @@ if "ANNOUCEMENT_URL" in os.environ:
 else:
     repl["@ANNOUCEMENT_URL@"] = "https://www.openmicroscopy.org/community/viewforum.php?f=11"
 
+if "MILESTONE" in os.environ:
+    repl["@MILESTONE@"] = os.environ.get('MILESTONE')
+else:
+    repl["@MILESTONE@"] = "OMERO-%s" % version
+
 for x, y in (
     ("LINUX_CLIENTS", "@VERSION@/OMERO.clients-@VERSION@-ice33-@BUILD@.linux.zip"),
     ("MAC_CLIENTS", "@VERSION@/OMERO.clients-@VERSION@-ice33-@BUILD@.mac.zip"),
@@ -92,5 +97,5 @@ for x, y in (
     find_pkg(repl, fingerprint_url, OMERO_SNAPSHOT_PATH, OMERO_SNAPSHOT_URL, x, y, MD5s)
 
 
-for line in fileinput.input(["tmpl.txt"]):
+for line in fileinput.input(["omero-template.html"]):
     print repl_all(repl, line, check_http=True),

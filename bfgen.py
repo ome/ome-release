@@ -79,5 +79,5 @@ for x in ["bio-formats.jar", "scifio.jar", "bftools.zip",
     repl["@DAILY_%s@" % x] = "%s/%s" % (daily_url, x)
     repl["@TRUNK_%s@" % x] = "%s/%s" % (trunk_url, x)
 
-for line in fileinput.input(["bftmpl.txt"]):
+for line in fileinput.input(["bf-template.html"]):
     print repl_all(repl, line, check_http=True),

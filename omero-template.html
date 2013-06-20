@@ -1,0 +1,353 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>OME Downloads</title>
+		<link rel="stylesheet" href="/sitestyling/plonematch.css" type="text/css" />
+	</head>
+	<body>
+		<!-- OME Banner - START -->
+		<div id="portal-top">
+			<div id="portal-header">
+				<ul id="portal-siteactions">
+					<li>
+						<br />
+					</li>
+				</ul><a id="portal-logo" accesskey="1" href="/" name="portal-logo"><img
+						src="/sitestyling/logo.jpg" alt="" title="" height="73" width="450" /></a>
+				<div id="portal-globalnav">
+					<br />
+				</div>
+			</div>
+			<div id="portal-personaltools-wrapper">
+				<ul id="portal-personaltools" class="visualInline">
+					<li>
+						<br />
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="visualClear" id="clear-space-before-wrapper-table"/>
+		<!-- OME Banner - END -->
+
+		<h2>
+			General instructions
+		</h2>
+		<ul>
+			<li>
+				<p>
+					A user in an institution where an OMERO.server instance is already installed and functioning only requires the appropriate client to access OMERO.
+				</p>
+			</li>
+			<li>
+				<p>
+					The OMERO server and client major versions <strong>must match</strong>, e.g. only @VERSION@ clients with the @VERSION@ server.
+				</p>
+			</li>
+			<li>
+				<p>
+					The tables below summarize the latest downloads (client &amp; server) for each major release of OMERO. Refer to the following sections for more information about each release.
+				</p>
+			</li>
+			<li>
+				<p>
+					After downloading the relevant files, you may want to take a look at our OMERO @VERSION@ <a href="@DOC_URL@">online documentation</a> page or <a href="@PDF_URL@">PDF documentation</a>.
+				</p>
+			</li>
+		</ul>
+		<h2>
+			OMERO client @VERSION@ downloads
+		</h2>
+		<ul>
+			<li>
+				<p>
+					OMERO.clients is a package including <a href="@DOC_URL@/users/clients-overview.html#omero-insight">OMERO.insight</a>, <a href="@DOC_URL@/users/clients-overview.html#omero-importer">OMERO.importer</a> and <a href="@DOC_URL@/users/clients-overview.html#omero-editor">OMERO.editor</a>. All clients are completely written in the Java programming language but require version <strong>1.5</strong> or higher.
+				</p>
+			</li>
+			<li>
+				<p>
+					Your installation can also make use of OMERO.web as an alternative client through which you or your users may access their data (see OMERO.web deployment for <a href="@DOC_URL@/sysadmins/unix/install-web.html">Unix based platforms</a> or <a href="@DOC_URL@/sysadmins/windows/install-web.html">Microsoft Windows</a>). OMERO.web includes Java Webstart for the OMERO.insight client.
+				</p>
+			</li>
+			<li>
+				<p>
+					For the OMERO ImageJ plugin to work, uncompress the download and put the entire folder under the ImageJ/Fiji plugins folder. If you are using <a href="http://rsbweb.nih.gov/ij">ImageJ1</a>, you must also have loci_tools.jar installed in the <code>ImageJ/plugins</code> folder. It is available for download under <a href="http://www.openmicroscopy.org/site/products/bio-formats/downloads">Products &gt; Bio-Formats</a>. (Note: if you are testing <a href="http://developer.imagej.net/">ImageJ2</a> then you should NOT add loci_tools.jar)
+				</p>
+			</li>
+			<li>
+				<p>
+					For the OMERO Matlab plugin to work, follow the instructions indicated <a href="@DOC_URL@/developers/Matlab.html">here</a>.
+				</p>
+			</li>
+		</ul>
+		<div class="alt-table">
+			<table>
+				<tr>
+					<th colspan="3">
+						Clients
+					</th>
+					<th colspan="2">
+						Plugins
+					</th>
+				</tr>
+				<tr>
+					<th>
+						Windows
+					</th>
+					<th>
+						Mac OS X
+					</th>
+					<th>
+						Linux
+					</th>
+					<th>
+						ImageJ/Fiji
+					</th>
+					<th>
+						Matlab
+					</th>
+				</tr>
+				<tr>
+					<td align="center">
+						<a href="@WIN_CLIENTS@">Download</a>
+					</td>
+					<td align="center">
+						<a href="@MAC_CLIENTS@">Download</a>
+					</td>
+					<td align="center">
+						<a href="@LINUX_CLIENTS@">Download</a>
+					</td>
+					<td align="center">
+						<a href="@IJ_CLIENTS@">Download</a>
+					</td>
+					<td align="center">
+						<a href="@MATLAB_CLIENTS@">Download</a>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<p>
+			&nbsp;
+		</p>
+		<h2>
+			OMERO server @VERSION@ downloads
+		</h2>
+		<ul>
+			<li>
+				<p>
+					OMERO @VERSION@ now supports Ice 3.4 &amp; Ice 3.3, download the server corresponding to your Ice version below. (Note that the client(s) should work with either version of the server.)
+				</p>
+			</li>
+			<li>
+				<p>
+					After downloading the server, you may want to take a look at the installation guide for <a href="@DOC_URL@/sysadmins/unix/server-installation.html">Unix based platforms</a>, <a href="@DOC_URL@/sysadmins/windows/server-installation.html">Microsoft Windows</a> or using the <a href="@DOC_URL@/users/virtual-appliance.html">Virtual Appliance</a> .
+				</p>
+			</li>
+		</ul>
+		<div class="alt-table">
+			<table>
+				<tr>
+					<th rowspan="2">
+						Virtual appliance
+					</th>
+					<th colspan="2">
+						Unix/Windows
+					</th>
+					<th rowspan="2">
+						API documentation
+					</th>
+				</tr>
+				<tr>
+					<th>
+						Ice 3.3
+					</th>
+					<th>
+						Ice 3.4
+					</th>
+				</tr>
+				<tr>
+					<td></td>
+				</tr>
+				<tr>
+					<td rowspan="2" align="center">
+						<a href="@VM@">Download</a>
+					</td>
+					<td align="center">
+						<a href="@SERVER33@">Download</a>
+					</td>
+					<td align="center">
+						<a href="@SERVER34@">Download</a>
+					</td>
+					<td rowspan="2" align="center">
+						<a href="@DOCS@">Download</a>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<p>
+			&nbsp;
+		</p>
+		<h2>
+			Release notes for OMERO @VERSION@ (@MONTHYEAR@)
+		</h2>
+		<p>
+			Full details of features and what is new can be found in the <a href="@ANNOUCEMENT_URL@">announcement</a>.
+		</p>
+		<p>
+			Full milestone release notes can be found on the <a href="http://trac.openmicroscopy.org.uk/ome/milestone/@MILESTONE@">OMERO Trac site</a>
+		</p>
+		<p>
+			This release includes:
+		</p>
+		<ul>
+			<li>OMERO.server (Ice 3.3 &amp; Ice 3.4)
+			</li>
+			<li>OMERO.clients
+			</li>
+			<li>OMERO.insight-ij
+			</li>
+			<li>OMERO.matlab
+			</li>
+		</ul>
+		<p>
+			The git release tag for this version is <code>v.@VERSION@</code> (sha1: <a href="https://github.com/openmicroscopy/openmicroscopy/commit/@SHA1_FULL@">@SHA1_SHORT@</a>) and the checksums for each download are indicated in the table below.
+		</p>
+		<div class="alt-table">
+			<table>
+				<tr>
+					<th>
+						Checksums
+					</th>
+					<th>
+						MD5
+					</th>
+				</tr>
+				<tr>
+					<td>
+						@LINUX_CLIENTS_BASE@
+					</td>
+					<td>
+						@LINUX_CLIENTS_MD5@
+					</td>
+				</tr>
+				<tr>
+					<td>
+						@MAC_CLIENTS_BASE@
+					</td>
+					<td>
+						@MAC_CLIENTS_MD5@
+					</td>
+				</tr>
+				<tr>
+					<td>
+						@WIN_CLIENTS_BASE@
+					</td>
+					<td>
+						@WIN_CLIENTS_MD5@
+					</td>
+				</tr>
+				<tr>
+					<td>
+						@IJ_CLIENTS_BASE@
+					</td>
+					<td>
+						@IJ_CLIENTS_MD5@
+					</td>
+				</tr>
+				<tr>
+					<td>
+						@MATLAB_CLIENTS_BASE@
+					</td>
+					<td>
+						@MATLAB_CLIENTS_MD5@
+					</td>
+				</tr>
+				<tr>
+					<td>
+						@SERVER33_BASE@
+					</td>
+					<td>
+						@SERVER33_MD5@
+					</td>
+				</tr>
+				<tr>
+					<td>
+						@SERVER34_BASE@
+					</td>
+					<td>
+						@SERVER34_MD5@
+					</td>
+				</tr>
+				<tr>
+					<td>
+						@DOCS_BASE@
+					</td>
+					<td>
+						@DOCS_MD5@
+					</td>
+				</tr>
+				<tr>
+					<td>
+						@VM_BASE@
+					</td>
+					<td>
+						@VM_MD5@
+					</td>
+				</tr>
+			</table>
+		</div>
+		<p>
+			&nbsp;
+		</p>
+		<h2>
+			Checking out the code
+		</h2>
+		<p>
+			To check out the code, install <code>git</code> and run the following command:
+		</p>
+		<pre>
+<code>$ git clone --recursive git://github.com/openmicroscopy/openmicroscopy.git
+</code>
+</pre>
+		<p>
+			If you are located in Europe, using our mirror may be faster:
+		</p>
+		<pre>
+<code>$ git clone --recursive git://git.openmicroscopy.org/ome.git
+</code>
+</pre>
+		<p>
+			The source code can also be browsed using the <a href="http://git.openmicroscopy.org/">Gitweb interface</a> or directly from the <a href="http://github.com/openmicroscopy/openmicroscopy">GitHub repository</a>.
+		</p>
+		<p>
+			To find out more about using git, you might take a look at <a href="@DOC_URL@/developers/using-git.html">our developer documentation</a>.
+		</p>
+		<p>
+			&nbsp;
+		</p>
+		<h2>
+			Previous versions
+		</h2>
+		<p>
+			Previous versions of the OMERO software can be found on our <a href="http://www.openmicroscopy.org/site/products/omero/legacy_downloads">Legacy Downloads</a> page.
+		</p>
+
+		<!-- OME Footer - Start -->
+		<div class="visualClear" id="clear-space-before-footer"><!-- --></div>
+		<div id="portal-footer">
+			<p>
+				<acronym title="Copyright">&copy;</acronym>
+				2000-2013
+				University of Dundee &amp; Open Microscopy Environment. <a href="http://www.openmicroscopy.org/site/about/licensing-attribution/licensing">Creative Commons Attribution 3.0 Unported License</a>
+			</p>
+			<p>
+				OME source code is available under the <a href="http://www.openmicroscopy.org/site/about/licensing">GNU General public license</a> or through commercial license from <a href="http://www.openmicroscopy.org/site/about/development-teams/glencoe-software">Glencoe Software</a>
+			</p>
+		</div>
+		<div class="visualClear"/>
+		<!-- OME Footer - END -->
+	</body>
+</html>
