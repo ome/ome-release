@@ -41,19 +41,21 @@ repl = {"@VERSION@": version,
         "@BUILD_ICE34@": build_ice34,
         "@MONTHYEAR@": datetime.datetime.now().strftime("%b %Y")}
 
+# Read major version from input version
+import re
+split_version =  re.split("^([0-9]+)\.([0-9]+)\.([0-9]+)(.*?)$", version)
+major_version = int(split_version[1])
 
 gh = github.Github(user_agent="PyGithub")
-org = gh.get_organization("openmicroscopy")
-repo = org.get_repo("openmicroscopy")
+repo = gh.get_organization("openmicroscopy").get_repo("openmicroscopy")
 for tag in repo.get_tags():
     if tag.name == ("v.%s" % version):
         break
 repl["@SHA1_FULL@"] = tag.commit.sha
 repl["@SHA1_SHORT@"] = tag.commit.sha[0:10]
-if "STAGING" in os.environ:
-    repl["@DOC_URL@"] = "https://www.openmicroscopy.org/site/support/omero4-staging"
-else:
-    repl["@DOC_URL@"] = "https://www.openmicroscopy.org/site/support/omero4"
+repl["@DOC_URL@"] = "https://www.openmicroscopy.org/site/support/omero%s" % major_version
+if "STAGING" in os.environ and os.environ.get("STAGING"):
+    repl["@DOC_URL@"] += "-staging"
 repl["@PDF_URL@"] = repl["@DOC_URL@"] + "/OMERO-%s.pdf" % version
 
 if "SNAPSHOT_PATH" in os.environ:
