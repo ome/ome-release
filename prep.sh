@@ -41,7 +41,7 @@ fi
 
 # Create OMERO & Bio-Formats directories
 if [[ !  -z $OMERO_BUILD ]]; then
-    "Creating OMERO release directories"
+    echo "Creating OMERO release directories"
     OMERO_SNAPSHOT_PATH=$SNAPSHOT_PATH/omero
     [[ -d $OMERO_SNAPSHOT_PATH ]] ||  mkdir $OMERO_SNAPSHOT_PATH
     OMERO_VIRTUALBOX_PATH=$OMERO_SNAPSHOT_PATH/virtualbox
@@ -59,7 +59,7 @@ if [[ !  -z $OMERO_BUILD ]]; then
 fi
 
 if [[ ! -z $BIOFORMATS_BUILD ]]; then
-    "Creating Bio-Formats release directories"
+    echo "Creating Bio-Formats release directories"
     BIOFORMATS_SNAPSHOT_PATH=$SNAPSHOT_PATH/bioformats
     [[ -d $BIOFORMATS_SNAPSHOT_PATH ]] ||  mkdir $BIOFORMATS_SNAPSHOT_PATH
 
