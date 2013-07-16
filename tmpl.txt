@@ -118,7 +118,7 @@ Windows](@DOC_URL@/sysadmins/windows/server-installation.html) or using the
 Full details of features and what is new can be found in the 
 [announcement](@ANNOUCEMENT_URL@).
 
-Full milestone release notes can be found on the [OMERO Trac site](http://trac.openmicroscopy.org.uk/ome/milestone/OMERO-@VERSION@)
+Full milestone release notes can be found on the [OMERO Trac site](http://trac.openmicroscopy.org.uk/ome/milestone/@MILESTONE@)
 
 This release includes:
 

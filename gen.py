@@ -77,6 +77,11 @@ if "ANNOUCEMENT_URL" in os.environ:
 else:
     repl["@ANNOUCEMENT_URL@"] = "https://www.openmicroscopy.org/community/viewforum.php?f=11"
 
+if "MILESTONE" in os.environ:
+    repl["@MILESTONE@"] = os.environ.get('MILESTONE')
+else:
+    repl["@MILESTONE@"] = "OMERO-%s" % version
+
 for x, y in (
     ("LINUX_CLIENTS", "@VERSION@/OMERO.clients-@VERSION@-ice33-@BUILD@.linux.zip"),
     ("MAC_CLIENTS", "@VERSION@/OMERO.clients-@VERSION@-ice33-@BUILD@.mac.zip"),
