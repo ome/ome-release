@@ -6,11 +6,20 @@ import os
 import sys
 import glob
 import hashlib
-import httplib
 import datetime
-import urlparse
 import fileinput
 
+from urllib2 import build_opener, Request
+
+
+class HeadRequest(Request):
+    """Subclass of urllib2.Request that sends a HEAD request."""
+    def get_method(self):
+        return 'HEAD'
+
+# create an opener that will simulate a browser user-agent
+opener = build_opener()
+opener.addheaders = [('User-agent', 'Mozilla/5.0')]
 
 class Filesize(object):
     """
@@ -50,34 +59,23 @@ class Filesize(object):
         format_string = '{:.%sf} {}' % (precision)
         return format_string.format(quotient, unit)
 
-
-def get_server_status_code(url):
-    """
-    Download just the header of a URL and
-    return the server's status code.
-    See: http://pythonadventures.wordpress.com/2010/10/17/check-if-url-exists/ (Josh)
-    """
-    # http://stackoverflow.com/questions/1140661
-    host, path = urlparse.urlparse(url)[1:3]    # elems [1] and [2]
-    try:
-        conn = httplib.HTTPConnection(host)
-        conn.request('HEAD', path)
-        status = conn.getresponse().status
-        return status
-    except StandardError:
-        return None
-
-
 def check_url(url):
     """
     Check if a URL exists without downloading the whole file.
     We only check the URL header.
-    See: http://pythonadventures.wordpress.com/2010/10/17/check-if-url-exists/ (Josh)
+    See https://bitbucket.org/birkenfeld/sphinx/src/a5c993967b40682227b7d8a54073c6155d9e11b5/sphinx/builders/linkcheck.py?at=stable
     """
-    # see also http://stackoverflow.com/questions/2924422
-    good_codes = [httplib.OK, httplib.FOUND, httplib.MOVED_PERMANENTLY]
-    return get_server_status_code(url) in good_codes
 
+    # need to actually check the URI
+    try:
+        f = opener.open(HeadRequest(url))
+        f.close()
+    except Exception, err:
+        return 'broken', str(err)
+    if f.url.rstrip('/') == url.rstrip('/'):
+        return 'working', f.url
+    else:
+        return 'redirected', f.url
 
 def hashfile(filename, blocksize=65536):
     m = hashlib.md5()
@@ -97,11 +95,12 @@ def repl_all(repl, line, check_http=False):
         line = line.replace(k, v)
     if check_http:
         for part in line.split():
-            if part.startswith("href="):
+            if part.startswith("href=") and not part[6] == '/':
                 part = part[6:]
-                part = part[0: part.find('"')]
-                if not check_url(part):
-                    raise Exception("Found bad URL: %s" % part)
+                url = part[0: part.find('"')]
+                [status, info] = check_url(url)
+                if not status == 'working' and not status == 'redirected':
+                    raise Exception("%s: %s" % (url, info))
     return line
 
 
