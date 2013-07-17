@@ -56,7 +56,6 @@ repl["@SHA1_SHORT@"] = tag.commit.sha[0:10]
 repl["@DOC_URL@"] = "https://www.openmicroscopy.org/site/support/omero%s" % major_version
 if "STAGING" in os.environ and os.environ.get("STAGING"):
     repl["@DOC_URL@"] += "-staging"
-repl["@PDF_URL@"] = repl["@DOC_URL@"] + "/OMERO-%s.pdf" % version
 
 if "SNAPSHOT_PATH" in os.environ:
     SNAPSHOT_PATH =  os.environ.get('SNAPSHOT_PATH')
