@@ -93,7 +93,7 @@ def hashfile(filename, blocksize=65536):
 def repl_all(repl, line, check_http=False):
     for k, v in repl.items():
         line = line.replace(k, v)
-    if check_http:
+    if False: # check_http:
         for part in line.split():
             if part.startswith("href=") and not part[6] == '/':
                 part = part[6:]
@@ -104,7 +104,7 @@ def repl_all(repl, line, check_http=False):
     return line
 
 
-def find_pkg(repl, fingerprint_url, snapshot_path, snapshot_url, name, path, ignore_md5=[]):
+def find_pkg(repl, fingerprint_url, snapshot_path, name, path, ignore_md5=[]):
     """
     Mutates the repl argument
     """
@@ -119,7 +119,7 @@ def find_pkg(repl, fingerprint_url, snapshot_path, snapshot_url, name, path, ign
             furl = "/".join([fingerprint_url, hash, "api", "xml"])
             if not check_url(furl):
                 raise Exception("Error accessing %s for %s" % (furl, path))
-    repl["@%s@" % name] = snapshot_url + path[len(snapshot_path):]
+    repl["@%s@" % name] = "./" + path[len(snapshot_path):]
     repl["@%s_MD5@" % name] = hash
     repl["@%s_BASE@" % name] = os.path.basename(path)
     #repl["@%s_SIZE@" % name] = str(Filesize(os.path.getsize(path)))
