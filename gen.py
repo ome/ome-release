@@ -29,16 +29,11 @@ def usage():
 try:
     version = sys.argv[1]
     build = sys.argv[2]
-    if len(sys.argv) < 4:
-        build_ice34 = build
-    else:
-        build_ice34 = sys.argv[3]
 except:
     usage()
 
 repl = {"@VERSION@": version,
         "@BUILD@": build,
-        "@BUILD_ICE34@": build_ice34,
         "@MONTHYEAR@": datetime.datetime.now().strftime("%b %Y")}
 
 # Read major version from input version
@@ -47,10 +42,18 @@ split_version =  re.split("^([0-9]+)\.([0-9]+)\.([0-9]+)(.*?)$", version)
 major_version = int(split_version[1])
 
 gh = github.Github(user_agent="PyGithub")
-repo = gh.get_organization("openmicroscopy").get_repo("openmicroscopy")
-for tag in repo.get_tags():
-    if tag.name == ("v.%s" % version):
-        break
+ome = "openmicroscopy"
+scc = "snoopycrimecop"
+
+repo1 = gh.get_organization(ome).get_repo(ome)
+repo2 = gh.get_user(scc).get_repo(ome)
+
+for repo in (repo1, repo2):
+    for tag in repo.get_tags():
+        if tag.name == ("v.%s" % version):
+            break
+        tag = None  # Disallow fall-through
+
 repl["@SHA1_FULL@"] = tag.commit.sha
 repl["@SHA1_SHORT@"] = tag.commit.sha[0:10]
 repl["@DOC_URL@"] = "https://www.openmicroscopy.org/site/support/omero%s" % major_version
@@ -60,16 +63,9 @@ if "STAGING" in os.environ and os.environ.get("STAGING"):
 if "SNAPSHOT_PATH" in os.environ:
     SNAPSHOT_PATH =  os.environ.get('SNAPSHOT_PATH')
 else:
-    SNAPSHOT_PATH = "/var/www/cvs.openmicroscopy.org.uk/snapshots"
-
-if "SNAPSHOT_URL" in os.environ:
-    SNAPSHOT_URL =  os.environ.get('SNAPSHOT_URL')
-else:
-    SNAPSHOT_URL = "http://cvs.openmicroscopy.org.uk/snapshots"
-repl["@SNAPSHOT_URL@"] = SNAPSHOT_URL
+    SNAPSHOT_PATH = "/ome/data_repo/public/"
 
 OMERO_SNAPSHOT_PATH = SNAPSHOT_PATH + "/omero/"
-OMERO_SNAPSHOT_URL = SNAPSHOT_URL + "/omero/"
 
 if "ANNOUCEMENT_URL" in os.environ:
     repl["@ANNOUCEMENT_URL@"] = os.environ.get('ANNOUCEMENT_URL')
@@ -82,18 +78,20 @@ else:
     repl["@MILESTONE@"] = "OMERO-%s" % version
 
 for x, y in (
-    ("LINUX_CLIENTS", "@VERSION@/OMERO.clients-@VERSION@-ice33-@BUILD@.linux.zip"),
-    ("MAC_CLIENTS", "@VERSION@/OMERO.clients-@VERSION@-ice33-@BUILD@.mac.zip"),
-    ("WIN_CLIENTS", "@VERSION@/OMERO.clients-@VERSION@-ice33-@BUILD@.win.zip"),
-    ("IJ_CLIENTS", "@VERSION@/OMERO.insight-ij-@VERSION@-ice33-@BUILD@.zip"),
-    ("MATLAB_CLIENTS", "@VERSION@/OMERO.matlab-@VERSION@-ice33-@BUILD@.zip"),
-    ("SERVER33", "@VERSION@/OMERO.server-@VERSION@-ice33-@BUILD@.zip"),
-    ("SERVER34", "@VERSION@/OMERO.server-@VERSION@-ice34-@BUILD_ICE34@.zip"),
-    ("DOCS", "@VERSION@/OMERO.docs-@VERSION@-ice33-@BUILD@.zip"),
-    ("VM", "virtualbox/omero-vm-@VERSION@-ice33-@BUILD@.ova"),
-    ("DOC", "@VERSION@/OMERO-@VERSION@.pdf")):
+    ("LINUX_CLIENTS", "@VERSION@/artifacts/OMERO.clients-@VERSION@-ice33-@BUILD@.linux.zip"),
+    ("MAC_CLIENTS", "@VERSION@/artifacts/OMERO.clients-@VERSION@-ice33-@BUILD@.mac.zip"),
+    ("WIN_CLIENTS", "@VERSION@/artifacts/OMERO.clients-@VERSION@-ice33-@BUILD@.win.zip"),
+    ("IJ_CLIENTS", "@VERSION@/artifacts/OMERO.insight-ij-@VERSION@-ice33-@BUILD@.zip"),
+    ("MATLAB_CLIENTS", "@VERSION@/artifacts/OMERO.matlab-@VERSION@-ice33-@BUILD@.zip"),
+    ("SERVER33", "@VERSION@/artifacts/OMERO.server-@VERSION@-ice33-@BUILD@.zip"),
+    ("SERVER34", "@VERSION@/artifacts/OMERO.server-@VERSION@-ice34-@BUILD@.zip"),
+    ("SERVER35", "@VERSION@/artifacts/OMERO.server-@VERSION@-ice35-@BUILD@.zip"),
+    ("DOCS", "@VERSION@/artifacts/OMERO.docs-@VERSION@-ice33-@BUILD@.zip"),
+    ("VM", "@VERSION@/artifacts/OMERO.vm-@VERSION@-@BUILD@.ova"),
+    ("DOC", "@VERSION@/artifacts/OMERO-@VERSION@.pdf")
+    ):
 
-    find_pkg(repl, fingerprint_url, OMERO_SNAPSHOT_PATH, OMERO_SNAPSHOT_URL, x, y, MD5s)
+    find_pkg(repl, fingerprint_url, OMERO_SNAPSHOT_PATH, x, y, MD5s)
 
 
 for line in fileinput.input(["tmpl.txt"]):

@@ -1,24 +1,26 @@
+Title: Bio-Formats Downloads
+Date: 2013-10-08
+Tags:bio-formats, downloads
+Author: The OME Team
+Summary: Bio-Formats Downloads
 
 ## Bio-Formats @VERSION@ ##
 
 * <a href="@loci_tools.jar@">LOCI Tools (loci_tools.jar)</a>: complete bundle (for end users) containing everything needed to read images into ImageJ using Bio-Formats. Instructions for installing Bio-Formats in ImageJ are available [in the user guide](@DOC_URL@/users/imagej/installing.html)
 * <a href="@bftools.zip@">Command line tools (bftools.zip)</a>: bundle of scripts for using Bio-Formats on the command line.
+* <a href="@bfmatlab.zip@">Matlab Toolbox (bfmatlab.zip)</a>: MATLAB functions and required libraries for accessing Bio-Formats from MATLAB.
 
 Please note:
 
-* Internet Explorer sometimes renames JAR files to ZIP (e.g., loci_tools.jar becomes loci_tools.zip); if this happens to you, simply rename the file back to its original name after the download is complete.
+* Internet Explorer sometimes renames JAR files to ZIP (e.g. loci_tools.jar becomes loci_tools.zip); if this happens to you, simply rename the file back to its original name after the download is complete.
 * For some browsers, you may need to right-click or control-click the link and choose "Save link as..." or a similar option to download the file.
 
-After downloading the relevant files, you may want to take a look at our Bio-Formats @VERSION@ [online documentation](@DOC_URL@) page or at the [PDF documentation](/latest/bio-formats-manual-pdf).
+After downloading the relevant files, you may want to take a look at our Bio-Formats @VERSION@ [online documentation](@DOC_URL@) page or at the [PDF documentation](@DOC@).
 
 
 ## Bio-Formats trunk/daily builds ##
 
 To access bug fixes between stable releases, you can download the [daily LOCI Tools build](@DAILY_loci_tools.jar@) (updated every night) or the [trunk LOCI Tools build](@TRUNK_loci_tools.jar@) (updated within minutes of every Git push) for the latest bug fixes, but  **please be aware** that these builds are not always thoroughly tested and should be considered beta quality.
-
-
-## Bio-Formats examples ## 
-
 
 
 ## Bio-Formats component builds ##
@@ -143,5 +145,5 @@ Bio-Formats is an open source project. You can access the source code from the B
 
 ## Previous versions ##
 
-Previous versions of Bio-Formats can be found on the [Bio-Formats archive](@BF_SNAPSHOT_URL@?C=M;O=D) page.
+Previous versions of Bio-Formats can be found on the [Bio-Formats archive](../?C=M;O=D) page.
 
