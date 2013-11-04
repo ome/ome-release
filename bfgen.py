@@ -75,7 +75,6 @@ for x, y in (
         ("ome-io.jar", "artifacts/ome-io.jar"),
         ("ome-xml.jar", "artifacts/ome-xml.jar"),
         ("ome_plugins.jar", "artifacts/ome_plugins.jar"),
-        ("ome-editor.jar", "artifacts/ome-editor.jar"),
         ("poi-loci.jar", "artifacts/poi-loci.jar"),
         ("jai_imageio.jar", "artifacts/jai_imageio.jar"),
         ("lwf-stubs.jar", "artifacts/lwf-stubs.jar"),
@@ -86,6 +85,11 @@ for x, y in (
         ("loci_plugins.jar", "artifacts/loci_plugins.jar"),
         ("loci-testing-framework.jar",
          "artifacts/loci-testing-framework.jar"),
+        ("loci-legacy.jar", "artifacts/loci-legacy.jar"),
+        ("scifio-devel.jar", "artifacts/scifio-devel.jar"),
+        ("scifio-test.jar", "artifacts/scifio-test.jar"),
+        ("specification.jar", "artifacts/specification.jar"),
+        ("turbojpeg.jar", "artifacts/turbojpeg.jar"),
         ("DOC", "artifacts/Bio-Formats-@VERSION@.pdf")):
 
     find_pkg(repl, fingerprint_url, BF_SNAPSHOT_PATH, x, y, MD5s)

@@ -42,6 +42,7 @@ repo1 = gh.get_organization(ome).get_repo(ome)
 repo2 = gh.get_user(scc).get_repo(ome)
 
 for repo in (repo1, repo2):
+    found = False
     for tag in repo.get_tags():
         if tag.name == ("v.%s" % version):
             found = True
