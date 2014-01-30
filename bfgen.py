@@ -9,9 +9,9 @@ import fileinput
 from doc_generator import find_pkg, repl_all
 
 fingerprint_url = "http://hudson.openmicroscopy.org.uk/fingerprint"
-daily_url = "http://hudson.openmicroscopy.org.uk/job/BIOFORMATS-daily/" \
+daily_url = "http://hudson.openmicroscopy.org.uk/job/BIOFORMATS-5.0-daily/" \
     "lastSuccessfulBuild/artifact/artifacts"
-trunk_url = "http://hudson.openmicroscopy.org.uk/job/BIOFORMATS-trunk/" \
+latest_url = "http://hudson.openmicroscopy.org.uk/job/BIOFORMATS-5.0-latest/" \
     "lastSuccessfulBuild/artifact/artifacts"
 
 
@@ -95,7 +95,7 @@ for x, y in (
     find_pkg(repl, fingerprint_url, BF_SNAPSHOT_PATH, x, y, MD5s)
 
     repl["@DAILY_%s@" % x] = "%s/%s" % (daily_url, x)
-    repl["@TRUNK_%s@" % x] = "%s/%s" % (trunk_url, x)
+    repl["@LATEST_%s@" % x] = "%s/%s" % (latest_url, x)
 
 for line in fileinput.input(["bf_downloads.html"]):
     print repl_all(repl, line, check_http=True),
