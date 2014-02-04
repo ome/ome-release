@@ -67,11 +67,12 @@ else:
 BF_SNAPSHOT_PATH = SNAPSHOT_PATH + "/bio-formats/" + version + "/"
 
 for x, y in (
-        ("bio-formats.jar", "artifacts/bio-formats.jar"),
-        ("scifio.jar", "artifacts/scifio.jar"),
+        ("LOCI_TOOLS", "artifacts/loci_tools.jar"),
+        ("OME_TOOLS", "artifacts/ome_tools.jar"),
         ("COMMAND_LINE_TOOLS", "artifacts/bftools.zip"),
         ("MATLAB_TOOLS", "artifacts/bfmatlab.zip"),
-        ("ome_tools.jar", "artifacts/ome_tools.jar"),
+        ("bio-formats.jar", "artifacts/bio-formats.jar"),
+        ("scifio.jar", "artifacts/scifio.jar"),
         ("ome-io.jar", "artifacts/ome-io.jar"),
         ("ome-xml.jar", "artifacts/ome-xml.jar"),
         ("ome_plugins.jar", "artifacts/ome_plugins.jar"),
@@ -81,7 +82,6 @@ for x, y in (
         ("mdbtools-java.jar", "artifacts/mdbtools-java.jar"),
         ("metakit.jar", "artifacts/metakit.jar"),
         ("loci-common.jar", "artifacts/loci-common.jar"),
-        ("LOCI_TOOLS", "artifacts/loci_tools.jar"),
         ("loci_plugins.jar", "artifacts/loci_plugins.jar"),
         ("loci-testing-framework.jar",
          "artifacts/loci-testing-framework.jar"),
