@@ -4,6 +4,6 @@ virtualenv:
   system_site_packages: true
 
 before_install:
-  - pip install flake8 --use-mirrors
+  - pip install flake8
 
 script: flake8 -v *.py
