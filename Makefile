@@ -18,6 +18,8 @@ omero: gen
 
 bf: bfgen
 
+figure: figuregen
+
 flimfit: flimfitgen
 
 utrack: utrackgen
@@ -30,6 +32,11 @@ gen:
 bfgen:
 	mkdir -p $(CONTENTDIR)
 	python bfgen.py $(RELEASE) > $(CONTENTDIR)/index.html
+	cp -r $(IMAGESDIR) $(CONTENTDIR)
+
+figuregen:
+	mkdir -p $(CONTENTDIR)
+	python figuregen.py $(RELEASE) > $(CONTENTDIR)/index.html
 	cp -r $(IMAGESDIR) $(CONTENTDIR)
 
 flimfitgen:
