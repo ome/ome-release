@@ -41,11 +41,11 @@
 <h2>FLIMfit @VERSION@ Downloads</h2>
 
 <p>
-  <strong><a href="#flimfit_50">OMERO 5.0</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#flimfit_44">OMERO 4.4</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#code">Code</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#legacy">Legacy</a> </strong></p>
+  <strong><a href="#flimfit_50">OMERO 5.0</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#flimfit_44">OMERO 4.4</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#code">Code</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#legacy">Previous versions</a> </strong></p>
 
 <ul>
 <li>
-<p>Mac users, please note that in order to run FLIMfit you will need the MATLAB Compiler Runtime (MCR) which enables the execution of compiled MATLAB applications or components on computers that do not have MATLAB installed. It can be downloaded from <a href="http://www.mathworks.co.uk/products/compiler/mcr/">MATLAB Compiler Runtime (MCR)</a>. The Windows Installer will automatically install the MCR. </p>
+<p>Mac users, please note that in order to run FLIMfit you will need the correct MCR (MATLAB Compiler Runtime) installed on your system (currently 2013b, v8.2) which enables the execution of compiled MATLAB applications or components on computers that do not have MATLAB installed. If you do not, or are in any doubt, please also download the MCR for your platform below. The Windows Installer will automatically install the MCR. </p>
 </li>
 
 <li>
@@ -56,11 +56,6 @@
 </li>
 <li>
 <p>Users who intend to use FLIMfit without OMERO can download either version (for 4.4.x or 5.0.x) as there will be no difference in stand-alone mode.</p>
-</li>
-
-</li>
-<li>
-<p>Windows users please note that there is currently no pre-compiled binary of 4.6.4 for OMERO 5.0.x due to reported problems connecting to 5.0.0 servers from FLIMfit on some Windows variants. It is, however, possible to use FLIMfit from the MATLAB source on GitHub by following the link below.</p>
 </li>
 </ul>
 
@@ -76,6 +71,12 @@
         <th width="271">File Name</th>
         <th width="125">Checksum</th>
         </tr>
+      <tr>
+        <td><a href="@FLIMFIT_50_WIN@"><img src="images/flimfit_win.png" alt="Windows Client Download" /></a></td>
+        <td align="center">@FLIMFIT_50_WIN_SIZE@</td>
+        <td>@FLIMFIT_50_WIN_BASE@</td>
+        <td align="center">@FLIMFIT_50_WIN_MD5@ (<a href="@FLIMFIT_50_WIN@.md5">MD5</a>)</td>
+      </tr>
       <tr>
         <td><a href="@FLIMFIT_50_MAC@"><img src="images/flimfit_mac.png" alt="Mac OS X Client Download" /></a></td>
         <td align="center">@FLIMFIT_50_MAC_SIZE@</td>
@@ -96,6 +97,12 @@
         <th width="271">File Name</th>
         <th width="125">Checksum</th>
         </tr>
+      <tr>
+        <td><a href="@FLIMFIT_44_WIN@"><img src="images/flimfit_win.png" alt="Windows Client Download" /></a></td>
+        <td align="center">@FLIMFIT_44_WIN_SIZE@</td>
+        <td>@FLIMFIT_44_WIN_BASE@</td>
+        <td align="center">@FLIMFIT_44_WIN_MD5@ (<a href="@FLIMFIT_44_WIN@.md5">MD5</a>)</td>
+      </tr>
       <tr>
         <td><a href="@FLIMFIT_44_MAC@"><img src="images/flimfit_mac.png" alt="Mac OS X Client Download" /></a></td>
         <td align="center">@FLIMFIT_44_MAC_SIZE@</td>
@@ -121,7 +128,24 @@
 </table>
 </div>
 
-<h2><a name="legacy" id="legacy"></a>Legacy versions</h2>
+<h2>MCR downloads</h2>
+<div class="alt-table">
+  <table width="269" border="0" cellpadding="5">
+    <tbody>
+      <tr>
+        <th width="269">MCR</th>
+        </tr>
+      <tr>
+        <td><a href="http://www.mathworks.com/supportfiles/downloads/R2013b/deployment_files/R2013b/installers/win64/MCR_R2013b_win64_installer.exe"><img src="images/mcr_windows.png" alt="Windows MCR Download" /></a></td>
+      </tr>
+      <tr>
+        <td><a href="http://www.mathworks.com/supportfiles/downloads/R2013b/deployment_files/R2013b/installers/maci64/MCR_R2013b_maci64_installer.zip"><img src="images/mcr_mac.png" alt="Mac MCR Download" /></a></td>
+        </tr>
+    </tbody>
+  </table>
+</div>
+
+<h2><a name="legacy" id="legacy"></a>Previous versions</h2>
 
 <ul>
   <li>
