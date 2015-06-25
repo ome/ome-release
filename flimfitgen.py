@@ -9,6 +9,9 @@ import fileinput
 
 from doc_generator import find_pkg, repl_all
 
+fingerprint_url = "http://ci.openmicroscopy.org/fingerprint"
+MD5s = []
+
 
 def usage():
     print "flimfitgen.py version"
@@ -34,8 +37,8 @@ repl["@MCR_MAC@"] = "http://www.mathworks.com/supportfiles/downloads/R2014b" \
     "/MCR_R2014b_maci64_installer.zip"
 
 for x, y in (
-        ("FLIMFIT_50_WIN", "artifacts/FLIMfit_@VERSION@_OME_5.1_x64.zip"),
-        ("FLIMFIT_50_MAC", "artifacts/FLIMfit_@VERSION@_OME_5.1_MACI64.zip"),
+        ("FLIMFIT_51_WIN", "artifacts/FLIMfit_@VERSION@_OME_5.1_x64.zip"),
+        ("FLIMFIT_51_MAC", "artifacts/FLIMfit_@VERSION@_OME_5.1_MACI64.zip"),
         ):
 
     find_pkg(repl, FLIMFIT_RSYNC_PATH, x, y)
