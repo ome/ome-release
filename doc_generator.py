@@ -139,7 +139,7 @@ def find_pkg(repl, snapshot_path, name, path, ignore_md5=[]):
         if not check_url(furl):
             raise Exception("Error accessing %s for %s" % (furl, path))
     repl["@%s@" % name] = "./" + path[len(snapshot_path):]
-    repl["@%s_MD5@" % name] = md5_hash[0:6]
-    repl["@%s_SHA1@" % name] = sha1_hash[0:6]
+    repl["@%s_MD5@" % name] = md5_hash[0:8]
+    repl["@%s_SHA1@" % name] = sha1_hash[0:8]
     repl["@%s_SIZE@" % name] = humansize(os.path.getsize(path))
     repl["@%s_BASE@" % name] = os.path.basename(path)
