@@ -47,7 +47,7 @@ platforms = {'UBUNTU1404': 'Ubuntu14.04-x86_64',
              'OSX1010':    'MacOSX10.10-x86_64',
              'OSX109':     'MacOSX10.9-x86_64',
              'CENTOS66':   'CentOS6.6-x86_64',
-             'CENTOS71':   'CentOS7.1.1503-x86_64',
+             'CENTOS71':   'CentOS7.1-x86_64',
              'FREEBSD102': 'FreeBSD10.2-amd64'}
 
 win_platforms = {'WINDOWSVC12X64': 'WindowsVC12-x64',
