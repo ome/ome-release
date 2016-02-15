@@ -39,7 +39,7 @@ BFCPP_RSYNC_PATH = '%s/%s/%s/' % (RSYNC_PATH, PREFIX, version)
 BF_RELATIVE_PATH = '../../bio-formats/@VERSION@/artifacts/'
 bf_artifacts = [
     ("DOC", BF_RELATIVE_PATH + "/Bio-Formats-@VERSION@.pdf"),
-    ("SOURCE_CODE", BF_RELATIVE_PATH + "bioformats-@VERSION@.zip")]
+    ("SOURCE_CODE", BF_RELATIVE_PATH + "bioformats-dfsg-@VERSION@.tar.xz")]
 
 # Links to Bio-Formats C++ artifacts
 platforms = {'UBUNTU1404': 'Ubuntu14.04-x86_64',
