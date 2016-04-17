@@ -23,7 +23,8 @@ except:
     usage()
 
 repl = {"@VERSION@": version,
-        "@MONTHYEAR@": datetime.datetime.now().strftime("%b %Y")}
+        "@MONTHYEAR@": datetime.datetime.now().strftime("%b %Y"),
+        "@YEAR@": datetime.datetime.now().strftime("%Y")}
 
 # Read major and minor version from input version
 major_version, minor_version = get_version(version)
