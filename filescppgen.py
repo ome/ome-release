@@ -134,6 +134,7 @@ thirdparty_sources = {
 
 thirdparty_tools = {
     'PATCH_SOURCE': 'patch-2.5.9-7-bin.zip',
+    'PY_DOCUTILS_SOURCE': 'docutils-0.12.tar.gz',
     'PY_GENSHI_SOURCE': 'Genshi-0.7.tar.gz',
     'PY_JINJA2_SOURCE': 'Jinja2-2.7.3.tar.gz',
     'PY_MARKUPSAFE_SOURCE': 'MarkupSafe-0.23.tar.gz',
